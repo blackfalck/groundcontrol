@@ -18,3 +18,14 @@ Router::scope('/', function (RouteBuilder $routes) {
         
     $routes->fallbacks('DashedRoute');
 });
+
+
+Router::prefix('admin', function ($routes) {
+    $routes->connect('/',           ['controller' => 'Users', 'action' => 'login']);
+    $routes->connect('/login',      ['controller' => 'Users', 'action' => 'login']);
+    $routes->connect('/register',   ['controller' => 'Users', 'action' => 'register']);
+    $routes->connect('/logout',     ['controller' => 'Users', 'action' => 'logout']);
+    $routes->connect('/myaccount',  ['controller' => 'Users', 'action' => 'view']);
+    
+    $routes->fallbacks('DashedRoute');
+});

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
@@ -29,7 +29,7 @@ class AppController extends Controller
                 'action' => 'login'
             ]
         ]);
-        
+
         if(!empty($this->request->session()->read('locale'))){
             $locale = $this->request->session()->read('locale');
         }
@@ -60,13 +60,9 @@ class AppController extends Controller
     public function isAuthorized($user)
     {         
         // Admin can access every action
-        var_dump($user['role']);
-        if (isset($user['role']) && $user['role']['alias'] == 'customer') {
-            echo 333;
+        if (isset($user['role']) && $user['role']['alias'] === 'admin') {
             return true;
         }
-        echo 444;
-//        return $this->redirect(['controller' => 'Users', 'action' => 'login']);
         
         // Default deny
         return false;
