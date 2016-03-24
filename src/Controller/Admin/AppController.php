@@ -40,6 +40,9 @@ class AppController extends Controller
         }
         
         I18n::locale($locale);
+        
+        $this->viewBuilder()->layout('admin');
+                
     }
 
     /**

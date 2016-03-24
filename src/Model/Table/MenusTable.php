@@ -1,18 +1,19 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Role;
+use App\Model\Entity\Menu;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Roles Model
+ * Menus Model
  *
- * @property \Cake\ORM\Association\HasMany $Users
+ * @property \Cake\ORM\Association\BelongsTo $ParentMenus
+ * @property \Cake\ORM\Association\HasMany $ChildMenus
  */
-class RolesTable extends Table
+class MenusTable extends Table
 {
 
     /**
@@ -25,14 +26,20 @@ class RolesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('roles');
+        $this->table('menus');
         $this->displayField('name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->addBehavior('Tree');
 
-        $this->hasMany('Users', [
-            'foreignKey' => 'role_id'
+        $this->belongsTo('ParentMenus', [
+            'className' => 'Menus',
+            'foreignKey' => 'parent_id'
+        ]);
+        $this->hasMany('ChildMenus', [
+            'className' => 'Menus',
+            'foreignKey' => 'parent_id'
         ]);
     }
 
@@ -53,8 +60,16 @@ class RolesTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->requirePresence('alias', 'create')
-            ->notEmpty('alias');
+            ->requirePresence('url', 'create')
+            ->notEmpty('url');
+
+        $validator
+            ->integer('lft')
+            ->allowEmpty('lft');
+
+        $validator
+            ->integer('rght')
+            ->allowEmpty('rght');
 
         $validator
             ->integer('active')
@@ -66,5 +81,18 @@ class RolesTable extends Table
             ->allowEmpty('deleted');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['parent_id'], 'ParentMenus'));
+        return $rules;
     }
 }

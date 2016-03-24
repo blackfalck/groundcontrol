@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * RolesFixture
+ * LanguagesFixture
  *
  */
-class RolesFixture extends TestFixture
+class LanguagesFixture extends TestFixture
 {
 
     /**
@@ -19,7 +19,7 @@ class RolesFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'uuid', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
-        'alias' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'code' => ['type' => 'string', 'length' => 10, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
         'active' => ['type' => 'integer', 'length' => 1, 'unsigned' => false, 'null' => false, 'default' => '1', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
@@ -41,13 +41,13 @@ class RolesFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'eac7b94b-bf8c-4ecb-8a8d-7d49f5848210',
+            'id' => '88ca93e3-e87b-465c-9e3f-bf38629842d1',
             'name' => 'Lorem ipsum dolor sit amet',
-            'alias' => 'Lorem ipsum dolor sit amet',
+            'code' => 'Lorem ip',
             'active' => 1,
-            'created' => '2016-03-24 20:42:53',
-            'modified' => '2016-03-24 20:42:53',
-            'deleted' => '2016-03-24 20:42:53'
+            'created' => '2016-03-24 20:42:16',
+            'modified' => '2016-03-24 20:42:16',
+            'deleted' => '2016-03-24 20:42:16'
         ],
     ];
 }

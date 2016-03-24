@@ -4,18 +4,17 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity.
+ * Language Entity.
  *
  * @property string $id
  * @property string $name
- * @property string $alias
+ * @property string $code
  * @property int $active
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
- * @property \App\Model\Entity\User[] $users
  */
-class Role extends Entity
+class Language extends Entity
 {
 
     /**

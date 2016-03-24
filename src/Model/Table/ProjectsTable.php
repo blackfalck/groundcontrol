@@ -1,18 +1,18 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Role;
+use App\Model\Entity\Project;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Roles Model
+ * Projects Model
  *
- * @property \Cake\ORM\Association\HasMany $Users
+ * @property \Cake\ORM\Association\BelongsToMany $Images
  */
-class RolesTable extends Table
+class ProjectsTable extends Table
 {
 
     /**
@@ -25,14 +25,16 @@ class RolesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('roles');
-        $this->displayField('name');
+        $this->table('projects');
+        $this->displayField('title');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('Users', [
-            'foreignKey' => 'role_id'
+        $this->belongsToMany('Images', [
+            'foreignKey' => 'project_id',
+            'targetForeignKey' => 'image_id',
+            'joinTable' => 'projects_images'
         ]);
     }
 
@@ -49,12 +51,30 @@ class RolesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->requirePresence('name', 'create')
-            ->notEmpty('name');
+            ->requirePresence('title', 'create')
+            ->notEmpty('title');
 
         $validator
-            ->requirePresence('alias', 'create')
-            ->notEmpty('alias');
+            ->requirePresence('slug', 'create')
+            ->notEmpty('slug');
+
+        $validator
+            ->allowEmpty('subtitle');
+
+        $validator
+            ->dateTime('date')
+            ->requirePresence('date', 'create')
+            ->notEmpty('date');
+
+        $validator
+            ->allowEmpty('metadescription');
+
+        $validator
+            ->allowEmpty('metakey');
+
+        $validator
+            ->requirePresence('content', 'create')
+            ->notEmpty('content');
 
         $validator
             ->integer('active')

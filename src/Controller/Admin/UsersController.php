@@ -13,6 +13,7 @@ class UsersController extends AppController
 {
     public function login()
     {
+        
         if ($this->request->is('post')) {
             if (Validation::email($this->request->data['mail'])) {
                     $this->Auth->config('authenticate', [
@@ -49,7 +50,6 @@ class UsersController extends AppController
     public function view()
     {
         echo 'admin';
-        var_dump($this->Auth->user()); exit;
         $id = $this->Auth->user('id');
         
         $user = $this->Users->get($id, [
@@ -57,7 +57,6 @@ class UsersController extends AppController
         ]);
         
         unset($user->password);
-var_dump($user);
         $this->set('user', $user);
         $this->set('_serialize', ['user']);
     }

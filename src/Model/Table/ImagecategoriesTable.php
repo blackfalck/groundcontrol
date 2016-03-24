@@ -1,18 +1,18 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Role;
+use App\Model\Entity\Imagecategory;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Roles Model
+ * Imagecategories Model
  *
- * @property \Cake\ORM\Association\HasMany $Users
+ * @property \Cake\ORM\Association\HasMany $Images
  */
-class RolesTable extends Table
+class ImagecategoriesTable extends Table
 {
 
     /**
@@ -25,14 +25,14 @@ class RolesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('roles');
+        $this->table('imagecategories');
         $this->displayField('name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('Users', [
-            'foreignKey' => 'role_id'
+        $this->hasMany('Images', [
+            'foreignKey' => 'imagecategory_id'
         ]);
     }
 

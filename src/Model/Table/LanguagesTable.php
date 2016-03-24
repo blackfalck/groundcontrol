@@ -1,18 +1,17 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Role;
+use App\Model\Entity\Language;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Roles Model
+ * Languages Model
  *
- * @property \Cake\ORM\Association\HasMany $Users
  */
-class RolesTable extends Table
+class LanguagesTable extends Table
 {
 
     /**
@@ -25,15 +24,11 @@ class RolesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('roles');
+        $this->table('languages');
         $this->displayField('name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
-
-        $this->hasMany('Users', [
-            'foreignKey' => 'role_id'
-        ]);
     }
 
     /**
@@ -53,8 +48,8 @@ class RolesTable extends Table
             ->notEmpty('name');
 
         $validator
-            ->requirePresence('alias', 'create')
-            ->notEmpty('alias');
+            ->requirePresence('code', 'create')
+            ->notEmpty('code');
 
         $validator
             ->integer('active')

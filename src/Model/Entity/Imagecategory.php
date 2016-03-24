@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity.
+ * Imagecategory Entity.
  *
  * @property string $id
  * @property string $name
@@ -13,9 +13,9 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
- * @property \App\Model\Entity\User[] $users
+ * @property \App\Model\Entity\Image[] $images
  */
-class Role extends Entity
+class Imagecategory extends Entity
 {
 
     /**

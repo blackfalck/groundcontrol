@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\PagesController;
+use App\Controller\MenusController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * App\Controller\PagesController Test Case
+ * App\Controller\MenusController Test Case
  */
-class PagesControllerTest extends IntegrationTestCase
+class MenusControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -16,7 +16,7 @@ class PagesControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.pages'
+        'app.menus'
     ];
 
     /**

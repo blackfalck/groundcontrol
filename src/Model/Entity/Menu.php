@@ -4,18 +4,22 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity.
+ * Menu Entity.
  *
  * @property string $id
+ * @property string $parent_id
+ * @property \App\Model\Entity\ParentMenu $parent_menu
  * @property string $name
- * @property string $alias
+ * @property string $url
+ * @property int $lft
+ * @property int $rght
  * @property int $active
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
- * @property \App\Model\Entity\User[] $users
+ * @property \App\Model\Entity\ChildMenu[] $child_menus
  */
-class Role extends Entity
+class Menu extends Entity
 {
 
     /**

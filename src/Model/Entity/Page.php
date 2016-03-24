@@ -4,18 +4,26 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity.
+ * Page Entity.
  *
  * @property string $id
- * @property string $name
+ * @property string $parent_id
+ * @property \App\Model\Entity\ParentPage $parent_page
+ * @property string $title
  * @property string $alias
+ * @property string $subtitle
+ * @property string $metadescription
+ * @property string $metakey
+ * @property string $content
+ * @property int $lft
+ * @property int $rght
  * @property int $active
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
- * @property \App\Model\Entity\User[] $users
+ * @property \App\Model\Entity\ChildPage[] $child_pages
  */
-class Role extends Entity
+class Page extends Entity
 {
 
     /**

@@ -4,11 +4,18 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * RolesFixture
+ * MenusFixture
  *
  */
-class RolesFixture extends TestFixture
+class MenusFixture extends TestFixture
 {
+
+    /**
+     * Table name
+     *
+     * @var string
+     */
+    public $table = 'menus';
 
     /**
      * Fields
@@ -18,8 +25,11 @@ class RolesFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'uuid', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'parent_id' => ['type' => 'uuid', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'name' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
-        'alias' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'url' => ['type' => 'string', 'length' => 255, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'fixed' => null],
+        'lft' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'rght' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'active' => ['type' => 'integer', 'length' => 1, 'unsigned' => false, 'null' => false, 'default' => '1', 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'created' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
@@ -41,13 +51,16 @@ class RolesFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'eac7b94b-bf8c-4ecb-8a8d-7d49f5848210',
+            'id' => 'd3f974a7-a9cf-4e68-a8e6-f77b7fe15480',
+            'parent_id' => 'd7450514-fee9-4d28-9513-bdff994b3c53',
             'name' => 'Lorem ipsum dolor sit amet',
-            'alias' => 'Lorem ipsum dolor sit amet',
+            'url' => 'Lorem ipsum dolor sit amet',
+            'lft' => 1,
+            'rght' => 1,
             'active' => 1,
-            'created' => '2016-03-24 20:42:53',
-            'modified' => '2016-03-24 20:42:53',
-            'deleted' => '2016-03-24 20:42:53'
+            'created' => '2016-03-24 20:42:22',
+            'modified' => '2016-03-24 20:42:22',
+            'deleted' => '2016-03-24 20:42:22'
         ],
     ];
 }

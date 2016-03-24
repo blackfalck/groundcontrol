@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * RolesFixture
+ * ImagecategoriesFixture
  *
  */
-class RolesFixture extends TestFixture
+class ImagecategoriesFixture extends TestFixture
 {
 
     /**
@@ -41,13 +41,13 @@ class RolesFixture extends TestFixture
      */
     public $records = [
         [
-            'id' => 'eac7b94b-bf8c-4ecb-8a8d-7d49f5848210',
+            'id' => '014b9ea6-e6cb-4a3f-bbb4-b9f37d9b2610',
             'name' => 'Lorem ipsum dolor sit amet',
             'alias' => 'Lorem ipsum dolor sit amet',
             'active' => 1,
-            'created' => '2016-03-24 20:42:53',
-            'modified' => '2016-03-24 20:42:53',
-            'deleted' => '2016-03-24 20:42:53'
+            'created' => '2016-03-24 20:42:04',
+            'modified' => '2016-03-24 20:42:04',
+            'deleted' => '2016-03-24 20:42:04'
         ],
     ];
 }

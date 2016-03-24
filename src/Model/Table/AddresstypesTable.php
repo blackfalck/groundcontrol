@@ -1,18 +1,18 @@
 <?php
 namespace App\Model\Table;
 
-use App\Model\Entity\Role;
+use App\Model\Entity\Addresstype;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Roles Model
+ * Addresstypes Model
  *
- * @property \Cake\ORM\Association\HasMany $Users
+ * @property \Cake\ORM\Association\HasMany $Addresses
  */
-class RolesTable extends Table
+class AddresstypesTable extends Table
 {
 
     /**
@@ -25,14 +25,14 @@ class RolesTable extends Table
     {
         parent::initialize($config);
 
-        $this->table('roles');
+        $this->table('addresstypes');
         $this->displayField('name');
         $this->primaryKey('id');
 
         $this->addBehavior('Timestamp');
 
-        $this->hasMany('Users', [
-            'foreignKey' => 'role_id'
+        $this->hasMany('Addresses', [
+            'foreignKey' => 'addresstype_id'
         ]);
     }
 

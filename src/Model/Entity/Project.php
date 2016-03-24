@@ -4,18 +4,23 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity.
+ * Project Entity.
  *
  * @property string $id
- * @property string $name
- * @property string $alias
+ * @property string $title
+ * @property string $slug
+ * @property string $subtitle
+ * @property \Cake\I18n\Time $date
+ * @property string $metadescription
+ * @property string $metakey
+ * @property string $content
  * @property int $active
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
- * @property \App\Model\Entity\User[] $users
+ * @property \App\Model\Entity\Image[] $images
  */
-class Role extends Entity
+class Project extends Entity
 {
 
     /**

@@ -4,18 +4,24 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Role Entity.
+ * Address Entity.
  *
  * @property string $id
- * @property string $name
- * @property string $alias
- * @property int $active
+ * @property string $addresstype_id
+ * @property \App\Model\Entity\Addresstype $addresstype
+ * @property string $firstname
+ * @property string $middlename
+ * @property string $lastname
+ * @property string $address
+ * @property string $addresssecond
+ * @property string $zipcode
+ * @property string $city
+ * @property string $country
  * @property \Cake\I18n\Time $created
  * @property \Cake\I18n\Time $modified
  * @property \Cake\I18n\Time $deleted
- * @property \App\Model\Entity\User[] $users
  */
-class Role extends Entity
+class Address extends Entity
 {
 
     /**
