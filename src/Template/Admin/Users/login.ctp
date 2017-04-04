@@ -2,7 +2,8 @@
 <?= $this->Form->create(null, [
                   'url' => [
                       'controller' => 'Users',
-                      'action' => 'login'
+                      'action' => 'login',
+                      'prefix' => 'admin'
                       ],
                   'class' => 'intro-form',
                   'id' => 'register_form',
