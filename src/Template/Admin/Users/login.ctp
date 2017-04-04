@@ -3,7 +3,6 @@
                   'url' => [
                       'controller' => 'Users',
                       'action' => 'login',
-                      'prefix' => 'admin'
                       ],
                   'class' => 'intro-form',
                   'id' => 'register_form',
