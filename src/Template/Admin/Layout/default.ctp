@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Dark Admin</title>
 
-    <link rel="stylesheet" type="text/css" href="/admin/bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/admin/font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="/admin/css/local.css" />
+    <link rel="stylesheet" type="text/css" href="/administrator/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/administrator/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/administrator/css/local.css" />
 
-    <script type="text/javascript" src="/admin/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="/admin/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/administrator/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/administrator/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
     <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
